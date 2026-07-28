@@ -14,3 +14,26 @@ mobileMenu.addEventListener('click', () => {
         navLinks.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
     }
 });
+
+// =========================================
+// EFEK KETIK (TYPING EFFECT) UNTUK SAPAAN
+// =========================================
+
+const textToType = "Halo! Selamat Datang di Profil Profesional Saya 👋";
+const typingElement = document.getElementById("typing-greeting");
+let charIndex = 0;
+
+function typeWriter() {
+    // Pastikan elemen ditemukan di halaman
+    if (typingElement && charIndex < textToType.length) {
+        typingElement.innerHTML += textToType.charAt(charIndex);
+        charIndex++;
+        setTimeout(typeWriter, 80); // Angka 80 adalah kecepatan mengetik (ms)
+    }
+}
+
+// Jalankan efek ketik saat halaman pertama kali dibuka
+document.addEventListener("DOMContentLoaded", function() {
+    // Beri sedikit jeda sebelum mulai mengetik agar lebih natural
+    setTimeout(typeWriter, 500);
+});
