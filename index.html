@@ -1,54 +1,192 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ANDI SYAMSUDIN | Portfolio</title>
-
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andi Syamsudin — Professional Portfolio</title>
+    <!-- Google Fonts & FontAwesome untuk ikon -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<nav>
-    <div class="logo">ANDI SYAMSUDIN</div>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">Andi Syamsudin</a>
+            <nav class="nav-links">
+                <a href="#home">Beranda</a>
+                <a href="#about">Tentang</a>
+                <a href="#services">Layanan</a>
+                <a href="#portfolio">Portofolio</a>
+                <a href="#contact" class="btn-cta">Kontak</a>
+            </nav>
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
 
-    <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Tentang</a></li>
-        <li><a href="#">Pengalaman</a></li>
-        <li><a href="#">Skill</a></li>
-        <li><a href="#">Kontak</a></li>
-    </ul>
-</nav>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container hero-container">
+            <div class="hero-text">
+                <span class="badge">Selamat Datang di Website Resmi</span>
+                <h1>Solusi Digital & Kreatif Profesional</h1>
+                <p>Berbagi kebaikan sesama pemula, menghadirkan karya digital berkualitas tinggi, dan membangun kehadiran online yang berdampak.</p>
+                <div class="hero-buttons">
+                    <a href="#portfolio" class="btn btn-primary">Lihat Portofolio</a>
+                    <a href="#contact" class="btn btn-outline">Hubungi Kami</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="image-box">
+                    <!-- Ganti dengan foto profesional Anda -->
+                    <img src="https://via.placeholder.com/400x400" alt="Andi Syamsudin">
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section class="hero">
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Tentang Saya</h2>
+                <p>Mengenal lebih dekat latar belakang dan komitmen kerja</p>
+            </div>
+            <div class="about-grid">
+                <div class="about-content">
+                    <h3>Profesionalisme & Dedikasi Tinggi</h3>
+                    <p>Halo! Saya Andi Syamsudin. Berkomitmen untuk terus belajar, berinovasi, dan memberikan hasil kerja terbaik di bidang digital media production dan pengembangan teknologi.</p>
+                    <p>Prinsip kerja saya adalah mengutamakan kualitas, ketepatan waktu, dan kepuasan mitra kerja atau klien.</p>
+                    <div class="stats-container">
+                        <div class="stat-box">
+                            <h4>100%</h4>
+                            <p>Komitmen</p>
+                        </div>
+                        <div class="stat-box">
+                            <h4>24/7</h4>
+                            <p>Dukungan</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-features">
+                    <div class="feature-card">
+                        <i class="fas fa-bullseye"></i>
+                        <div>
+                            <h4>Fokus & Sasaran</h4>
+                            <p>Selalu berorientasi pada hasil nyata yang efektif bagi audiens.</p>
+                        </div>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-shield-alt"></i>
+                        <div>
+                            <h4>Terpercaya</h4>
+                            <p>Menjaga integritas dan standar profesional dalam setiap proyek.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<div class="hero-text">
+    <!-- Services Section -->
+    <section id="services" class="section bg-light">
+        <div class="container">
+            <div class="section-title">
+                <h2>Layanan Kami</h2>
+                <p>Apa saja yang dapat kami bantu untuk kebutuhan Anda</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-video"></i>
+                    <h3>Digital Media Production</h3>
+                    <p>Pembuatan konten visual, video sinematik, dan pengelolaan media sosial profesional.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-code"></i>
+                    <h3>Web Development</h3>
+                    <p>Pembuatan website profil perusahaan, landing page, dan aplikasi berbasis web yang responsif.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Content Strategy</h3>
+                    <p>Strategi optimasi platform digital dan peningkatan engagement secara berkelanjutan.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<h1>ANDI<br>SYAMSUDIN</h1>
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Portofolio</h2>
+                <p>Beberapa proyek dan karya unggulan</p>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div class="portfolio-img">
+                        <img src="https://via.placeholder.com/600x400" alt="Proyek 1">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Proyek Digital Branding</h3>
+                        <p>Pengembangan identitas visual dan strategi konten media sosial.</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-img">
+                        <img src="https://via.placeholder.com/600x400" alt="Proyek 2">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Desain & Kustomisasi</h3>
+                        <p>Eksplorasi estetika mekanikal dan desain modern interaktif.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<h2>Mechanical Engineering</h2>
+    <!-- Contact Section -->
+    <section id="contact" class="section bg-light">
+        <div class="container">
+            <div class="section-title">
+                <h2>Hubungi Kami</h2>
+                <p>Mari diskusikan proyek atau kerja sama selanjutnya</p>
+            </div>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h3>Informasi Kontak</h3>
+                    <p><i class="fas fa-envelope"></i> email@domain.com</p>
+                    <p><i class="fas fa-phone"></i> +62 8xx-xxxx-xxxx</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Lampung, Indonesia</p>
+                </div>
+                <form class="contact-form" onsubmit="event.preventDefault(); alert('Pesan berhasil dikirim!');">
+                    <div class="form-group">
+                        <input type="text" placeholder="Nama Lengkap" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Alamat Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea rows="5" placeholder="Pesan atau Keperluan" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Kirim Pesan</button>
+                </form>
+            </div>
+        </div>
+    </section>
 
-<p>
-Professional Portfolio Website
-Production Operator • Mechanical Technician
-</p>
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-container">
+            <p>&copy; 2026 Andi Syamsudin. All Rights Reserved.</p>
+            <p class="footer-quote">"Berbagi kebaikan sesama pemula"</p>
+        </div>
+    </footer>
 
-<a href="#" class="btn">Download CV</a>
-
-<a href="https://wa.me/6285142250074" class="btn btn2">Hubungi Saya</a>
-
-</div>
-
-<div class="hero-image">
-
-<img src="assets/profile.png" alt="Andi">
-
-</div>
-
-</section>
-<script src="script.js"></script>
-
+    <script src="script.js"></script>
 </body>
 </html>
