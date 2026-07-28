@@ -1,6 +1,6 @@
 :root {
-    --primary: #0f172a; /* Navy gelap ala perusahaan */
-    --accent: #2563eb;  /* Biru profesional */
+    --primary: #0f172a;
+    --accent: #2563eb;
     --text: #334155;
     --light: #f8fafc;
     --white: #ffffff;
@@ -23,7 +23,7 @@ body {
 
 .container {
     width: 90%;
-    max-width: 1150px;
+    max-width: 1100px;
     margin: 0 auto;
 }
 
@@ -33,7 +33,8 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    background: var(--white);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(5px);
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
     z-index: 1000;
 }
@@ -46,7 +47,7 @@ body {
 }
 
 .logo {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     font-weight: 700;
     color: var(--primary);
     text-decoration: none;
@@ -54,7 +55,7 @@ body {
 
 .nav-links {
     display: flex;
-    gap: 2rem;
+    gap: 1.5rem;
     align-items: center;
 }
 
@@ -62,17 +63,18 @@ body {
     text-decoration: none;
     color: var(--text);
     font-weight: 500;
+    font-size: 0.95rem;
     transition: color 0.3s;
 }
 
-.nav-links a:hover, .nav-links a.active {
+.nav-links a:hover {
     color: var(--accent);
 }
 
 .btn-cta {
     background: var(--accent);
     color: var(--white) !important;
-    padding: 0.5rem 1.25rem;
+    padding: 0.5rem 1.2rem;
     border-radius: 6px;
 }
 
@@ -82,44 +84,60 @@ body {
     cursor: pointer;
 }
 
-/* Hero Section */
+/* Hero Section dengan Background Foto Bengkel Anda */
 .hero {
-    padding: 140px 0 80px;
-    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    position: relative;
+    height: 100vh;
+    background: url('bg-bengkel.jpg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: var(--white);
 }
 
-.hero-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: center;
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 23, 42, 0.75); /* Lapisan gelap agar teks sangat jelas terbaca */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
 }
 
 .badge {
     display: inline-block;
-    background: #e0e7ff;
-    color: var(--accent);
-    padding: 0.25rem 0.75rem;
+    background: rgba(37, 99, 235, 0.2);
+    border: 1px solid var(--accent);
+    color: #93c5fd;
+    padding: 0.3rem 1rem;
     border-radius: 20px;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     font-weight: 600;
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
 }
 
-.hero-text h1 {
-    font-size: 2.75rem;
-    color: var(--primary);
-    line-height: 1.2;
+.hero-content h1 {
+    font-size: 3rem;
     margin-bottom: 1rem;
+    font-weight: 700;
 }
 
-.hero-text p {
-    font-size: 1.05rem;
+.hero-content p {
+    font-size: 1.1rem;
     margin-bottom: 2rem;
+    color: #cbd5e1;
 }
 
 .hero-buttons {
     display: flex;
+    justify-content: center;
     gap: 1rem;
 }
 
@@ -142,21 +160,16 @@ body {
 }
 
 .btn-outline {
-    border: 2px solid var(--border);
-    color: var(--primary);
+    border: 2px solid var(--white);
+    color: var(--white);
 }
 
 .btn-outline:hover {
-    border-color: var(--primary);
+    background: var(--white);
+    color: var(--primary);
 }
 
-.image-box img {
-    width: 100%;
-    border-radius: 12px;
-    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
-}
-
-/* Sections General */
+/* General Sections */
 .section {
     padding: 80px 0;
 }
@@ -173,7 +186,11 @@ body {
 .section-title h2 {
     font-size: 2rem;
     color: var(--primary);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
+}
+
+.section-title p {
+    color: #64748b;
 }
 
 /* About Section */
@@ -184,138 +201,196 @@ body {
     align-items: center;
 }
 
-.about-content p {
+.about-text p {
     margin-bottom: 1rem;
 }
 
-.stats-container {
-    display: flex;
-    gap: 2rem;
-    margin-top: 2rem;
-}
-
-.stat-box h4 {
-    font-size: 1.75rem;
-    color: var(--accent);
-}
-
-.about-features {
+.info-badge-box {
+    margin-top: 1.5rem;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 0.5rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--primary);
 }
 
-.feature-card {
+.info-badge-box i {
+    color: var(--accent);
+    margin-right: 0.5rem;
+}
+
+.about-card-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.mini-card {
     display: flex;
     gap: 1rem;
     background: var(--white);
-    padding: 1.5rem;
+    padding: 1.25rem;
     border-radius: 8px;
     box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+    border-left: 4px solid var(--accent);
 }
 
-.feature-card i {
+.mini-card i {
     font-size: 1.5rem;
     color: var(--accent);
 }
 
-/* Services Grid */
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+.mini-card h4 {
+    color: var(--primary);
+    font-size: 1rem;
 }
 
-.service-card {
-    background: var(--white);
-    padding: 2.5rem 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
-    transition: transform 0.3s;
+/* Timeline Pengalaman Kerja */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-left: 2rem;
 }
 
-.service-card:hover {
-    transform: translateY(-5px);
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 5px;
+    bottom: 5px;
+    width: 2px;
+    background: var(--border);
 }
 
-.service-card i {
-    font-size: 2.5rem;
+.timeline-item {
+    position: relative;
+    margin-bottom: 2.5rem;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: -2rem;
+    top: 5px;
+    width: 14px;
+    height: 14px;
+    background: var(--accent);
+    border-radius: 50%;
+    border: 3px solid var(--light);
+}
+
+.timeline-date {
+    font-size: 0.85rem;
+    font-weight: 600;
     color: var(--accent);
-    margin-bottom: 1.25rem;
+    margin-bottom: 0.3rem;
 }
 
-.service-card h3 {
-    margin-bottom: 0.75rem;
-    color: var(--primary);
-}
-
-/* Portfolio Grid */
-.portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-}
-
-.portfolio-item {
+.timeline-content {
     background: var(--white);
+    padding: 1.5rem;
     border-radius: 8px;
-    overflow: hidden;
     box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
 }
 
-.portfolio-img img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-}
-
-.portfolio-info {
-    padding: 1.5rem;
-}
-
-.portfolio-info h3 {
+.timeline-content h3 {
     color: var(--primary);
-    margin-bottom: 0.5rem;
+    font-size: 1.15rem;
+}
+
+.timeline-content h4 {
+    font-size: 0.9rem;
+    color: #64748b;
+    margin-bottom: 0.8rem;
+}
+
+.timeline-content ul {
+    padding-left: 1.2rem;
+    font-size: 0.95rem;
+}
+
+.timeline-content li {
+    margin-bottom: 0.4rem;
+}
+
+/* Skills Section */
+.skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.skill-category {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+}
+
+.skill-category h3 {
+    font-size: 1.1rem;
+    color: var(--primary);
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.skill-category h3 i {
+    color: var(--accent);
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.skill-tags span {
+    background: var(--light);
+    border: 1px solid var(--border);
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text);
 }
 
 /* Contact Section */
-.contact-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    gap: 3rem;
+.contact-box {
     background: var(--white);
-    padding: 3rem;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 2.5rem;
     border-radius: 12px;
     box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+.contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
 }
 
 .contact-info p {
-    margin: 1rem 0;
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 0.5rem;
+    font-weight: 500;
 }
 
 .contact-info i {
     color: var(--accent);
 }
 
-.contact-form {
+.contact-cta {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     gap: 1rem;
-}
-
-.form-group input, .form-group textarea {
-    width: 100%;
-    padding: 0.85rem;
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    outline: none;
-}
-
-.form-group input:focus, .form-group textarea:focus {
-    border-color: var(--accent);
 }
 
 /* Footer */
@@ -323,16 +398,11 @@ footer {
     background: var(--primary);
     color: var(--white);
     text-align: center;
-    padding: 2rem 0;
+    padding: 1.5rem 0;
+    font-size: 0.9rem;
 }
 
-.footer-quote {
-    font-size: 0.85rem;
-    color: #94a3b8;
-    margin-top: 0.5rem;
-}
-
-/* Responsive Design */
+/* Responsive */
 @media (max-width: 768px) {
     .nav-links {
         display: none;
@@ -340,10 +410,13 @@ footer {
     .menu-toggle {
         display: block;
     }
-    .hero-container, .about-grid, .services-grid, .portfolio-grid, .contact-wrapper {
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+    .about-grid, .skills-grid {
         grid-template-columns: 1fr;
     }
-    .hero-text h1 {
-        font-size: 2rem;
+    .contact-cta {
+        flex-direction: column;
     }
 }
