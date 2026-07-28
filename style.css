@@ -84,7 +84,7 @@ body {
     cursor: pointer;
 }
 
-/* Hero Section dengan Background Foto Bengkel Anda */
+/* Hero Section Background Bengkel */
 .hero {
     position: relative;
     height: 100vh;
@@ -101,7 +101,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(15, 23, 42, 0.75); /* Lapisan gelap agar teks sangat jelas terbaca */
+    background: rgba(15, 23, 42, 0.75);
     z-index: 1;
 }
 
@@ -109,6 +109,7 @@ body {
     position: relative;
     z-index: 2;
     max-width: 800px;
+    margin: 0 auto;
 }
 
 .badge {
@@ -314,6 +315,28 @@ body {
     margin-bottom: 0.4rem;
 }
 
+/* Galeri Foto Pengalaman */
+.experience-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 1.5rem;
+}
+
+.experience-gallery img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experience-gallery img:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
 /* Skills Section */
 .skills-grid {
     display: grid;
@@ -418,5 +441,8 @@ footer {
     }
     .contact-cta {
         flex-direction: column;
+    }
+    .experience-gallery {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
