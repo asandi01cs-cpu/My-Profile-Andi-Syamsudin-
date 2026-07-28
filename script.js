@@ -16,24 +16,37 @@ mobileMenu.addEventListener('click', () => {
 });
 
 // =========================================
-// EFEK KETIK (TYPING EFFECT) UNTUK SAPAAN
+// EFEK KETIK SAPAAN DI NAVBAR (OTOMATIS HILANG)
 // =========================================
 
-const textToType = "Halo! Selamat Datang di Profil Profesional Saya 👋";
+// Teks ini disesuaikan dengan visi Anda untuk saling berbagi
+const textToType = "Selamat datang! Mari terhubung dan berbagi kebaikan sesama pemula."; 
 const typingElement = document.getElementById("typing-greeting");
+const greetingOverlay = document.getElementById("greeting-overlay");
 let charIndex = 0;
 
 function typeWriter() {
-    // Pastikan elemen ditemukan di halaman
     if (typingElement && charIndex < textToType.length) {
         typingElement.innerHTML += textToType.charAt(charIndex);
         charIndex++;
-        setTimeout(typeWriter, 80); // Angka 80 adalah kecepatan mengetik (ms)
+        setTimeout(typeWriter, 50); // Kecepatan mengetik (50ms)
+    } else if (charIndex === textToType.length) {
+        // Teks selesai diketik! Tunggu 2.5 detik agar sempat dibaca...
+        setTimeout(() => {
+            if(greetingOverlay) {
+                // Beri efek pudar
+                greetingOverlay.classList.add("fade-out");
+                
+                // Setelah memudar selama 1 detik, hapus elemen secara total agar Navbar normal kembali
+                setTimeout(() => {
+                    greetingOverlay.style.display = "none";
+                }, 1000);
+            }
+        }, 2500); // 2500 ms = 2.5 detik
     }
 }
 
-// Jalankan efek ketik saat halaman pertama kali dibuka
+// Jalankan efek sesaat setelah halaman web terbuka
 document.addEventListener("DOMContentLoaded", function() {
-    // Beri sedikit jeda sebelum mulai mengetik agar lebih natural
     setTimeout(typeWriter, 500);
 });
