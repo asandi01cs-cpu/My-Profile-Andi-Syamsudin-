@@ -1,16 +1,23 @@
-const mobileMenu = document.getElementById('mobile-menu');
-const navLinks = document.querySelector('.nav-links');
+// =========================================
+// MENU NAVIGASI HP (Garis Tiga / Hamburger)
+// =========================================
 
-mobileMenu.addEventListener('click', () => {
-    navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-    if (navLinks.style.display === 'flex') {
-        navLinks.style.flexDirection = 'column';
-        navLinks.style.position = 'absolute';
-        navLinks.style.top = '70px';
-        navLinks.style.left = '0';
-        navLinks.style.width = '100%';
-        navLinks.style.background = '#ffffff';
-        navLinks.style.padding = '1.5rem';
-        navLinks.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
-    }
+const mobileMenu = document.getElementById('mobile-menu');
+const navLinks = document.getElementById('nav-links');
+
+// Fungsi untuk memunculkan/menyembunyikan menu saat diklik di HP
+if (mobileMenu && navLinks) {
+    mobileMenu.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+}
+
+// Tutup menu otomatis jika salah satu link diklik (di versi HP)
+const links = document.querySelectorAll('.nav-links a');
+links.forEach(link => {
+    link.addEventListener('click', () => {
+        if (navLinks.classList.contains('active')) {
+            navLinks.classList.remove('active');
+        }
+    });
 });
